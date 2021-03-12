@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Cocktails - Cocktail Database App in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Briefing
 
-## Available Scripts
+This is a cocktail database app created in React Js powered by bootstrap css framework. This app using data from the CocktailDb website and contains details about loads of cocktails across the globe. Please support them, in my knowledge it's one of the easiest APIs to use with no authentication. 
 
-In the project directory, you can run:
+Using this app you would be able to search through the cocktail collection by name, you'd be able to filter them by whether they're 
+alcoholic or not, filter by ingredients and more.
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [React JS](https://reactjs.org/)
+* [Bootstrap](https://getbootstrap.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Authors
 
-### `npm test`
+* **Amit Prafulla (APFirebolt)** - (http://amitprafull.com/)
+## Project setup
+This should be a piece of cake for you if you have worked under npm environment before. Simply initialize an empty project using 'npm init' and then install packages or simply clone the project and install dependencies.
+```
+npm install
+npm start
+```
+### Compiles and minifies for production
+```
+npm run build
+```
+## Project Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please find some of the screenshots of the application. First screenshot depicts the homepage of the application.
 
-### `npm run build`
+![alt text](./screenshots/home.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This shows Cock detail page which displays picture of the cocktail, name and ingredients used to make this variant.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![alt text](./screenshots/cocktail_detail.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This screenshot shows the list of cocktails fetched when searched by name for a cocktail.
 
-### `npm run eject`
+![alt text](./screenshots/cocktail_list.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This shows page where list of all Cocktail names when filtered through categories, ingredients and glass.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![alt text](./screenshots/cocktail_tags.png)
