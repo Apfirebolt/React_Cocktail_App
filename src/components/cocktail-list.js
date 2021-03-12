@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 function CocktailList(props) {
@@ -13,6 +14,7 @@ function CocktailList(props) {
               <th scope="col">Alcoholic</th>
               <th scope="col">Category</th>
               <th scope="col">Ingredients</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +27,9 @@ function CocktailList(props) {
                 <td>
                 { item.strIngredient1 ? item.strIngredient1 : null },
                 { item.strIngredient2 ? item.strIngredient2 : null },
+                </td>
+                <td>
+                <Link to={`detail/${item.idDrink}`}>Details</Link>
                 </td>
               </tr>
             ))}
