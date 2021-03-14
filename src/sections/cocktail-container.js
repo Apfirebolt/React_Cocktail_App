@@ -78,7 +78,6 @@ class CocktailSection extends Component {
       filterResults: filteredData.data.drinks
     })
   }
-
   async filterByIngredient(ingredientName) {
     const filteredData = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredientName);
     this.setState({
