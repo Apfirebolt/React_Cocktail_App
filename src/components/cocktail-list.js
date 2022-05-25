@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 function CocktailList(props) {
+
     const { cocktails } = props;
     return (
       <div className="container my-3">

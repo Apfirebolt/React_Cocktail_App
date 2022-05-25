@@ -4,8 +4,7 @@
 
 This is a cocktail database app created in React Js powered by bootstrap css framework. This app using data from the CocktailDb website and contains details about loads of cocktails across the globe. Please support them, in my knowledge it's one of the easiest APIs to use with no authentication. 
 
-Using this app you would be able to search through the cocktail collection by name, you'd be able to filter them by whether they're 
-alcoholic or not, filter by ingredients and more.
+Using this app you would be able to search through the cocktail collection by name, you'd be able to filter them by whether they're alcoholic or not, filter by ingredients and more.
 
 ## Built With
 
@@ -14,7 +13,7 @@ alcoholic or not, filter by ingredients and more.
 
 ## Authors
 
-* **Amit Prafulla (APFirebolt)** - (http://amitprafull.com/)
+* **Amit Prafulla (APFirebolt)** - (https://apgiiit.com/)
 ## Project setup
 This should be a piece of cake for you if you have worked under npm environment before. Simply initialize an empty project using 'npm init' and then install packages or simply clone the project and install dependencies.
 ```
@@ -25,6 +24,10 @@ npm start
 ```
 npm run build
 ```
+
+## Updates
+
+- 26-05-2022 : Minor changes in the UI
 ## Project Screenshots
 
 Please find some of the screenshots of the application. First screenshot depicts the homepage of the application.
