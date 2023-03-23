@@ -36,6 +36,10 @@ const Home = () => {
         setIsLoading(false)
     }
 
+    const clearSearch = () => {
+        setCocktailData([])
+    }
+
     useEffect(() => {
         getApiData()
     }, []);
@@ -46,24 +50,29 @@ const Home = () => {
             <h3 className="text-center my-3">
                 Cocktails
             </h3>
-            {isLoading 
+            {isLoading
                 ? <Loader />
                 : <SearchCocktail
                     categories={categories}
                     glasses={glasses}
                     ingredients={ingredients}
                     getCocktails={getCocktails}
+                    clearSearch={clearSearch}
                 />
             }
 
-            {cocktailData &&
+            {cocktailData.length ?
                 <CocktailList cocktails={cocktailData} />
+                :
+                <p className="text-center my-2">
+                    No cocktail data available
+                </p>
             }
 
             {notFound &&
-            <h3 className="text-center my-3 text-danger">
-                No cocktails found with that name.
-            </h3>
+                <h3 className="text-center my-3 text-danger">
+                    No cocktails found with that name.
+                </h3>
             }
         </div>
     );

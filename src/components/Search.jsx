@@ -5,7 +5,7 @@ const SearchCocktail = (props) => {
 
 
     const [searchText, setSearchText] = useState('');
-    const { glasses, categories, ingredients, getCocktails } = props;
+    const { glasses, categories, ingredients, getCocktails, clearSearch } = props;
 
     return (
         <div className="container my-3">
@@ -66,7 +66,7 @@ const SearchCocktail = (props) => {
                     <button className="rounded shadow btn btn-secondary">
                         Search Cocktail By Ingredients
                     </button>
-                    <button className="rounded shadow btn btn-warning mx-2">
+                    <button className="rounded shadow btn btn-warning mx-2" onClick={() => { clearSearch() }}>
                         Clear Search Results
                     </button>
                 </div>

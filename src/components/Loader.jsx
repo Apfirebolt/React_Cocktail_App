@@ -6,9 +6,9 @@ const Loader = () => {
 
   return (
     <footer aria-labelledby="footer-heading">
-        <p>
-            Loader component
-        </p>    
+        <h1 className="text-danger text-center my-3">
+            Loading...
+        </h1>    
     </footer>
   );
 };
