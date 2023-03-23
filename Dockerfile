@@ -6,6 +6,10 @@ COPY package* ./
 
 RUN npm install
 
+RUN echo 'Generating the build..'
+
+RUN pwd
+
 COPY . .
 
 # Build the project
