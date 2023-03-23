@@ -6,8 +6,6 @@ COPY package* ./
 
 RUN npm install
 
-RUN echo 'Generating the build..'
-
 RUN pwd
 
 COPY . .
@@ -24,7 +22,8 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy build files from stage 1
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
