@@ -1,9 +1,9 @@
 
 import React from 'react';
-import './styles.css';
 
-function CocktailList(props) {
+const FilteredCocktailList = (props) => {
     const { cocktails } = props;
+    console.log('Props are ', cocktails)
     return (
       <div className="container my-3">
         <h3 className="text-center my-3 text-success">
@@ -16,4 +16,4 @@ function CocktailList(props) {
     );
   }
   
-  export default CocktailList;
+  export default FilteredCocktailList;

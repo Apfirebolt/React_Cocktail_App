@@ -3,9 +3,18 @@ import React, { useState } from "react";
 
 const SearchCocktail = (props) => {
 
-
+    
     const [searchText, setSearchText] = useState('');
-    const { glasses, categories, ingredients, getCocktails, clearSearch } = props;
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedGlass, setSelectedGlass] = useState('');
+    const [selectedIngredient, setSelectedIngredient] = useState('');
+
+    const setSelectedCategoryUtil = (value) => {
+        console.log('Value ', value)
+        setSelectedCategory(value)
+    }
+
+    const { glasses, categories, ingredients, getCocktails, clearSearch, filterByCategory, filterByGlass, filterByIngredient } = props;
 
     return (
         <div className="container my-3">
@@ -25,14 +34,15 @@ const SearchCocktail = (props) => {
                 <div className="col-md-6">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_category">Search Cocktail By Category</label>
-                        <select id="search_by_category" className="form-control">
+                        <select id="search_by_category" className="form-control" onChange={(e) => setSelectedCategoryUtil(e.target.value)}>
                             {categories.map((item, index) => (
                                 <option key={index} value={item.strCategory}>
                                     {item.strCategory}
                                 </option>
                             ))}
                         </select>
-                        <button className="rounded shadow btn btn-secondary my-3">
+                        {selectedCategory}
+                        <button className="rounded shadow btn btn-secondary my-3" onClick={() => { filterByCategory(selectedCategory) }}>
                             Search Cocktail By Category
                         </button>
                     </div>
@@ -40,7 +50,7 @@ const SearchCocktail = (props) => {
                 <div className="col-md-6">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_glasses">Search Cocktail By Glasses</label>
-                        <select id="search_by_glasses" className="form-control">
+                        <select id="search_by_glasses" className="form-control" onChange={(e) => setSelectedGlass(e.target.value)}>
                             {glasses.map((item, index) => (
                                 <option key={index} value={item.strGlass}>
                                     {item.strGlass}
@@ -48,14 +58,14 @@ const SearchCocktail = (props) => {
                             ))}
                         </select>
                     </div>
-                    <button className="rounded shadow btn btn-secondary">
+                    <button className="rounded shadow btn btn-secondary" onClick={() => { filterByGlass(selectedGlass) }}>
                         Search Cocktail By Glasses
                     </button>
                 </div>
                 <div className="col-md-6">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_ingredients">Search Cocktail By Ingredients</label>
-                        <select id="search_by_ingredients" className="form-control">
+                        <select id="search_by_ingredients" className="form-control" onChange={(e) => setSelectedIngredient(e.target.value)}>
                             {ingredients.map((item, index) => (
                                 <option key={index} value={item.strIngredient1}>
                                     {item.strIngredient1}
@@ -63,7 +73,7 @@ const SearchCocktail = (props) => {
                             ))}
                         </select>
                     </div>
-                    <button className="rounded shadow btn btn-secondary">
+                    <button className="rounded shadow btn btn-secondary" onClick={() => { filterByIngredient(selectedIngredient) }}>
                         Search Cocktail By Ingredients
                     </button>
                     <button className="rounded shadow btn btn-warning mx-2" onClick={() => { clearSearch() }}>

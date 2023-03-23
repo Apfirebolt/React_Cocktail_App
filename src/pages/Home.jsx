@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchCocktail from "../components/Search";
 import CocktailList from "../components/CocktailList";
+import FilteredCocktailList from "../components/FilteredCocktails";
 import Loader from "../components/Loader";
 import axios from 'axios';
 
@@ -13,6 +14,7 @@ const Home = () => {
     const [ingredients, setIngredientsData] = useState([]);
     const [categories, setCategoryData] = useState([]);
     const [glasses, setGlassData] = useState([]);
+    const [filterResults, setFilteredResults] = useState(null);
 
     const getCocktails = async (searchText) => {
         setIsLoading(true)
@@ -40,6 +42,30 @@ const Home = () => {
         setCocktailData([])
     }
 
+    // Filters for cocktails
+    const filterByCategory = async (categoryName) => {
+        setIsLoading(true)
+        const filteredData = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=' + categoryName);
+        setFilteredResults(filteredData.data.drinks)
+        setIsLoading(false)
+    }
+
+    const filterByGlass = async (glassName) => {
+        setIsLoading(true)
+        const filteredData = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=' + glassName);
+        setFilteredResults(filteredData.data.drinks)
+        setIsLoading(false)
+    }
+
+    console.log(filterResults)
+
+    const filterByIngredient = async (ingredientName) => {
+        setIsLoading(true)
+        const filteredData = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredientName);
+        setFilteredResults(filteredData.data.drinks)
+        setIsLoading(false)
+    }
+
     useEffect(() => {
         getApiData()
     }, []);
@@ -58,17 +84,22 @@ const Home = () => {
                     ingredients={ingredients}
                     getCocktails={getCocktails}
                     clearSearch={clearSearch}
+                    filterByCategory={filterByCategory}
+                    filterByGlass={filterByGlass}
+                    filterByIngredient={filterByIngredient}
                 />
             }
 
-            {cocktailData.length ?
+            {cocktailData && cocktailData.length ?
                 <CocktailList cocktails={cocktailData} />
                 :
                 <p className="text-center my-2">
                     No cocktail data available
                 </p>
             }
-
+            {filterResults &&
+                <FilteredCocktailList cocktails={filterResults} />
+            }
             {notFound &&
                 <h3 className="text-center my-3 text-danger">
                     No cocktails found with that name.
