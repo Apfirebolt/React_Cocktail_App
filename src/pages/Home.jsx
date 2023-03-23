@@ -97,8 +97,12 @@ const Home = () => {
                     No cocktail data available
                 </p>
             }
-            {filterResults &&
+            {filterResults && filterResults.length ?
                 <FilteredCocktailList cocktails={filterResults} />
+                :
+                <p className="text-center my-2">
+                    No filtered cocktails available
+                </p>
             }
             {notFound &&
                 <h3 className="text-center my-3 text-danger">
