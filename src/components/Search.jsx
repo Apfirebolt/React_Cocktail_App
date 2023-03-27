@@ -18,7 +18,7 @@ const SearchCocktail = (props) => {
 
     return (
         <div className="container my-3">
-            <div className="row">
+            <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_name">Search Cocktail By Name</label>
@@ -27,11 +27,13 @@ const SearchCocktail = (props) => {
                             onChange={(e) => setSearchText(e.target.value)}
                         />
                     </div>
-                    <button className="rounded shadow btn btn-secondary" onClick={() => { getCocktails(searchText) }}>
+                    <button className="rounded shadow btn btn-secondary mx-auto" onClick={() => { getCocktails(searchText) }}>
                         Search Cocktail By Name
                     </button>
                 </div>
-                <div className="col-md-6">
+            </div>
+            <div className="row">
+            <div className="col-md-4">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_category">Search Cocktail By Category</label>
                         <select id="search_by_category" className="form-control" onChange={(e) => setSelectedCategoryUtil(e.target.value)}>
@@ -41,13 +43,12 @@ const SearchCocktail = (props) => {
                                 </option>
                             ))}
                         </select>
-                        {selectedCategory}
                         <button className="rounded shadow btn btn-secondary my-3" onClick={() => { filterByCategory(selectedCategory) }}>
                             Search Cocktail By Category
                         </button>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_glasses">Search Cocktail By Glasses</label>
                         <select id="search_by_glasses" className="form-control" onChange={(e) => setSelectedGlass(e.target.value)}>
@@ -62,7 +63,7 @@ const SearchCocktail = (props) => {
                         Search Cocktail By Glasses
                     </button>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="form-group my-3">
                         <label htmlFor="search_by_ingredients">Search Cocktail By Ingredients</label>
                         <select id="search_by_ingredients" className="form-control" onChange={(e) => setSelectedIngredient(e.target.value)}>
@@ -77,7 +78,7 @@ const SearchCocktail = (props) => {
                         Search Cocktail By Ingredients
                     </button>
                     <button className="rounded shadow btn btn-warning mx-2" onClick={() => { clearSearch() }}>
-                        Clear Search Results
+                        Clear
                     </button>
                 </div>
             </div>
